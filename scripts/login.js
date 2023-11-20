@@ -13,8 +13,8 @@ $(document).ready(function() {
                 password: password
             },
             success: function(response) {
-                console.log(response)
-                if (response == 1) {
+                let result = JSON.parse(response);
+                if (result.success) {
                     window.location.href = '../views/home.php';
                 } else {
                     bootbox.alert("Credenciales incorrectas, intente nuevamente");

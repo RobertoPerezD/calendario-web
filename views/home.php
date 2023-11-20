@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="container-fluid">
                             <form method="POST" id="schedule-form" name="schedule-form">
-                                <input type="hidden" name="id" value="">
+                                <input type="hidden" name="id_event" value="">
                                 <div class="form-group mb-2">
                                     <label for="title" class="control-label">Titulo</label>
                                     <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
@@ -35,26 +35,12 @@
                                     <label for="end_datetime" class="control-label">Fin</label>
                                     <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
                                 </div>
-                                <input type="hidden" id="idbitacora_repetir" name="idbitacora_repetir" />
-                                <div class="form-group mb-2">
-                                    <label for="end_datetime" class="control-label">Repetir cada</label>
-                                    <input type="number" for="variacion-repite" class="form-control form-control-sm rounded-0" min="0" value="3" id="numero_repite" name="numero_repite" required />
-                                </div>
-                                <div class="form-group mb-2">
-                                    <select for="select-repite" class="form-control form-control-sm rounded-0" id="opciones_repetir" name="opciones_repetir" required>
-                                        <option value="Minutos">Minutos</option>
-                                        <option value="Horas">Horas</option>
-                                        <option value="Dias">Dias</option>
-                                        <option value="Semanas">Semanas</option>
-                                        <option value="Meses">Meses</option>
-                                    </select>
-                                </div>
                                 <div class="form-group mb-2">
                                     <label for="end_datetime" class="control-label">Notifica faltando</label>
-                                    <input type="number" for="variacion-repite" class="form-control form-control-sm rounded-0" min="0" value="5" id="otra_tiempo_notifica" name="otra_tiempo_notifica" required />
+                                    <input type="number" for="variacion-repite" class="form-control form-control-sm rounded-0" min="0" value="5" id="notification" name="notification" required />
                                 </div>
                                 <div class="form-group mb-2">
-                                    <select for="select-repite" class="form-control form-control-sm rounded-0" id="notifica_antes" name="notifica_antes" required>
+                                    <select for="select-repite" class="form-control form-control-sm rounded-0" id="notification_time" name="notification_time" required>
                                         <option value="Minutos">Minutos</option>
                                         <option value="Horas">Horas</option>
                                         <option value="Dias">Dias</option>

@@ -5,14 +5,20 @@ require_once("../models/Auth.php");
 $pdo = connectToDatabase();
 $auth = new Auth($pdo);
 
-$id_user =  $_SESSION['user'];
-$name = $user['name'];
-
+$email = cleanString($_POST["username"] ?? "");
+$password = cleanString($_POST["password"] ?? "");
 
 switch ($_GET["op"]) {
 
-    case "getEvents":
+    case "authenticateUser":
         $response = $auth->authenticateUser($email, $password);
         echo $response;
+    break;
+    case 'logout':
+        session_start();
+        session_unset();
+        
+        session_destroy();
+        header("Location: ../views/login.php");
     break;
 } 

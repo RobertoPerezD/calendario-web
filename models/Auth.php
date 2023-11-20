@@ -19,11 +19,10 @@ class Auth {
             if ($user) {
                 session_start();
                 $_SESSION['name'] = $user['name'];
-                $_SESSION['user'] = $user['id_user'];
-                
-                return 1;
+                $_SESSION['id_user'] = $user['id_user'];
+                echo json_encode(['success' => true]);
             } else {
-                return 0 ;
+                echo json_encode(['success' => false]);
             }
         } catch (PDOException $e) {
             return "Error: " . $e->getMessage();
